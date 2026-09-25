@@ -4,6 +4,7 @@
 ### Key Notes :spiral_notepad:
 
 > PyTorch: Defines the model(`SimpleModel`), data loading (`DataLoader`), and training loop.
+
 > DeepSpeed:
 - Mixed Precision (fp16): Automatically converts tensors to half precision to save memory.
 - ZeRO Stage 1 (zero_optimization): Shards optimizer states across GPUs (or memory in a single GPU)
