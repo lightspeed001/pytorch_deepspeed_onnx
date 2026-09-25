@@ -3,6 +3,17 @@
 
 ### Key Notes :spiral_notepad:
 
+> PyTorch: Defines the model(`SimpleModel`), data loading (`DataLoader`), and training loop.
+> DeepSpeed:
+- Mixed Precision (fp16): Automatically converts tensors to half precision to save memory.
+- ZeRO Stage 1 (zero_optimization): Shards optimizer states across GPUs (or memory in a single GPU)
+- Gradient Accumulation: Simulates larger batch sizes acummulating gradients over multiple steps.
+- Simplified Training Loop: `model_engine` abstracts away boilerplate (eg. `loss.backward()` becomes `model_engine.backward(loss)`) 
+
+__Conclusion__
+
+- DeepSpeed integrates with PyTorch to automate memory optimizations (like mixed and optimizer sharding) while keeping the training loop clean. The actual heavy lifting (eg. gradient synchronization, memory management) is handled by DeepSpeed under the hood.
+---
 
 ### Build and Run Instructions :hammer_and_wrench:
 
